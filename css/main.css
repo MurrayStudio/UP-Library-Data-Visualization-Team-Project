@@ -1,7 +1,14 @@
-﻿body
+body
 {
 
 
 
+}
 
+#chart_div {
+    margin: 100px;
+}
+
+.jumbotron {
+    text-align: center;
 }
