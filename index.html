@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="js/main.css">
 </head>
 
 <body>
@@ -20,15 +20,7 @@
     <!-- Shamus Code space (This is where chart goes) -->
 
 
-    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
-    <div id="chart_div"></div>
-    <br />
-    <div id="btn-group">
-        <button class="button button-blue" id="none">No Format</button>
-        <button class="button button-blue" id="scientific">Scientific Notation</button>
-        <button class="button button-blue" id="decimal">Decimal</button>
-        <button class="button button-blue" id="short">Short</button>
-    </div>
+    <div id="chart_div"></div>  <!-- Google Chart drawn in this div -->
 
 
 
@@ -39,10 +31,9 @@
 
 
 
-
-
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}">   </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
