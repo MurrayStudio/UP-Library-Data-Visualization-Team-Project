@@ -17,15 +17,12 @@ body
 
 .jumbotron {
     text-align: center;
-<<<<<<< HEAD
     background-color: gray;
     border-bottom: 3px solid orange;
     
-=======
 }
 
 .jumbotron p{
     margin-left: 20%;
     margin-right: 20%;
->>>>>>> test
 }
