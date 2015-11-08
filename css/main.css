@@ -7,12 +7,25 @@ body
 }
 
 #chart_div {
-    margin: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#title_chart {
+    text-align: center;
 }
 
 .jumbotron {
     text-align: center;
+<<<<<<< HEAD
     background-color: gray;
     border-bottom: 3px solid orange;
     
+=======
+}
+
+.jumbotron p{
+    margin-left: 20%;
+    margin-right: 20%;
+>>>>>>> test
 }
