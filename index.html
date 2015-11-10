@@ -9,28 +9,27 @@
     <meta name="description" content="Home Page for Library Chart">
     <link rel="icon" href="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg">
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap and main.css -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-	
-    <!-- Shamus Code space (This is where chart goes) -->
 
-     <!-- header for website -->
+    <!-- header for website -->
     <div class="jumbotron">
         <h1>Nakatomi Library Data Visualization Project</h1>
         <p>Create an interactive visualization of specific confidence levels of libraries at a variety of master level universities pulled from a Credo data set; for the use of University of Portland's library.</p>
     </div>
 
-     <!-- title of chart -->
-    <div id="title_chart"><h2>Average Confidence Levels Forming a Thesis by Institution</h2></div>
+    <!-- title of chart -->
+    <div id="title_chart">
+        <h2>Average Confidence Levels Forming a Thesis by Institution</h2></div>
 
-     <!-- Google Chart drawn in this div -->
+    <!-- Google Chart drawn in this div -->
     <div id="chart_div"></div>
-    
-        <!-- FOOTER -->
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <p class="pull-right">Nakatomi Co. 2015
@@ -40,12 +39,7 @@
 
 
 
-    <!-- End Shamus Code space -->
-
-
-
-
-
+    <!-- scripts -->
     <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

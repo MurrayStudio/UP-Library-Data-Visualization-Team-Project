@@ -13,7 +13,6 @@ function drawChart() {
         ]);
         
         var options = {
-            //title: 'Average Confidence Levels Forming a Thesis by Institution',
             titlePosition: 'none',
             backgroundColor: '#E5E3DF',
             tooltip: {isHtml: true},
