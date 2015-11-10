@@ -28,7 +28,10 @@ function drawChart() {
         chart.draw(data, google.charts.Bar.convertOptions(options));
 };
 
-// super hack-y way to do the
+// super hack-y way to do the tooltips
+// This function returns a div in the following format:
+// <bold> Univerisity Name </bold>
+// Variable name: <bold> value </bold>
 function createTooltip(universityName, variable, value) {
 	return '<div style="padding:5px 5px 5px 5px; white-space: nowrap; font-size: 18px;">' +
 	'<table>' + '<tr><b>' + universityName + '</b></tr>' + '<br>'
