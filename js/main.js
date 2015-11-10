@@ -5,11 +5,11 @@ google.setOnLoadCallback(drawChart);
 
 function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['', 'Confidence Forming a Thesis', {role: 'style'}, {role: 'tooltip'}],
-          ['UP', 	2.684, 'color: #450074', "University of Portland\nConfidence forming a thesis: 2.684"],
-          ['ASU', 	2.618, 'color: #003899', "Angelo State University\nConfidence forming a thesis: 2.684"],
-          ['PLU', 	2.798, 'color: #FFBD28', "Pacific Lutheran University\nConfidence forming a thesis: 2.684"],
-          ['BCF', 	2.578, 'color: #973141', "Baptist College of Florida\nConfidence forming a thesis: 2.684"],
+          ['', 'Confidence Forming a Thesis', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
+          ['UP', 	2.684, 'color: #450074', createTooltip("University of Portland\n","Confidence forming a thesis: ", 2.684)],
+          ['ASU', 	2.618, 'color: #003899', createTooltip("Angelo State University\n","Confidence forming a thesis: ", 2.618)],
+          ['PLU', 	2.798, 'color: #FFBD28', createTooltip("Pacific Lutheran University\n","Confidence forming a thesis: ",2.798)],
+          ['BCF', 	2.578, 'color: #973141', createTooltip("Baptist College of Florida\n","Confidence forming a thesis: ",2.578)],
         ]);
         
         var options = {
@@ -27,4 +27,14 @@ function drawChart() {
         document.getElementById('chart_div'));
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
+};
+
+// super hack-y way to do the tooltips
+// This function returns a div in the following format:
+// <bold> Univerisity Name </bold>
+// Variable name: <bold> value </bold>
+function createTooltip(universityName, variable, value) {
+	return '<div style="padding:5px 5px 5px 5px; white-space: nowrap; font-size: 18px;">' +
+	'<table>' + '<tr><b>' + universityName + '</b></tr>' + '<br>'
+	+ '<tr>' + variable + '<b>' + value + '</b></tr>' + '</table></div>';
 };
