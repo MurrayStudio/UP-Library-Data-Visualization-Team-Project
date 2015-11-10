@@ -15,6 +15,7 @@ function drawChart() {
         var options = {
             //title: 'Average Confidence Levels Forming a Thesis by Institution',
             titlePosition: 'none',
+            backgroundColor: '#E5E3DF',
             tooltip: {isHtml: true},
             legend: {position: 'none'},
             vAxis: {title: "Avg. Confidence Level", format: 'decimal', minValue: 0},

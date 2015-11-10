@@ -1,9 +1,9 @@
 body
 {
-	background-color:rgb(229,227,223);
+	background-color:#E5E3DF;
 	padding: 0;
 	margin: 0;	
-
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 #chart_div {
@@ -17,6 +17,7 @@ body
 
 .jumbotron {
     text-align: center;
+    color: white;
     background-color: gray;
     border-bottom: 3px solid orange;
     
@@ -25,4 +26,34 @@ body
 .jumbotron p{
     margin-left: 20%;
     margin-right: 20%;
+}
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+    background-color: #E5E3DF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid rgba(0, 0, 0, .2);
+    /* Set the fixed height of the footer here */
+    height: 5%;
+}
+
+.footer .container {
+    width: 95%;
+    height: auto;
+}
+
+.footer a {
+    color: orange;
+    font-size: 16px;
+}
+
+.footer .pull-right {
+    color: orange;
+    font-size: 16px;
+    right: 5%;
+    margin: 5px;
 }
