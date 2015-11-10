@@ -7,9 +7,9 @@ function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['', 'Confidence Forming a Thesis', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
           ['UP', 	2.684, 'color: #450074', createTooltip("University of Portland\n","Confidence forming a thesis: ", 2.684)],
-          ['ASU', 	2.618, 'color: #003899', createTooltip("Angelo State University\n","Confidence forming a thesis: ", 2.684)],
-          ['PLU', 	2.798, 'color: #FFBD28', createTooltip("Pacific Lutheran University\n","Confidence forming a thesis: ",2.684)],
-          ['BCF', 	2.578, 'color: #973141', createTooltip("Baptist College of Florida\n","Confidence forming a thesis: ",2.684)],
+          ['ASU', 	2.618, 'color: #003899', createTooltip("Angelo State University\n","Confidence forming a thesis: ", 2.618)],
+          ['PLU', 	2.798, 'color: #FFBD28', createTooltip("Pacific Lutheran University\n","Confidence forming a thesis: ",2.798)],
+          ['BCF', 	2.578, 'color: #973141', createTooltip("Baptist College of Florida\n","Confidence forming a thesis: ",2.578)],
         ]);
         
         var options = {
