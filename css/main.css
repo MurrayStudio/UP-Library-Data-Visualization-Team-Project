@@ -1,59 +1,82 @@
-body
-{
-	background-color:#E5E3DF;
+body {
+	background-color: #E5E3DF;
 	padding: 0;
-	margin: 0;	
-    font-family: 'Source Sans Pro', sans-serif;
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 #chart_div {
-    margin-left: 5%;
-    margin-right: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 #title_chart {
-    text-align: center;
+	text-align: center;
 }
 
 .jumbotron {
-    text-align: center;
-    color: white;
-    background-color: gray;
-    border-bottom: 3px solid orange;
-    
+	text-align: center;
+	color: white;
+	background-color: gray;
+	border-bottom: 3px solid orange;
 }
 
-.jumbotron p{
-    margin-left: 20%;
-    margin-right: 20%;
+.jumbotron p {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+/* Dropdown
+ -------------------------------------------------- */
+.dropdown {
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+#dropdownMenu1 {
+	background: white;
+	font-size: 20px;
+}
+
+.dropdown-menu {
+	font-size: 20px;
+	margin-top: 5px;
+	left: 50%;
+	right: auto;
+	text-align: center;
+	transform: translate(-50%, 0);
+}
+
+.dropdown-menu li {
+	margin: 5px;
 }
 
 /* Footer
--------------------------------------------------- */
+ -------------------------------------------------- */
 
 .footer {
-    background-color: #E5E3DF;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 2px solid rgba(0, 0, 0, .2);
-    /* Set the fixed height of the footer here */
-    height: 5%;
+	background-color: #E5E3DF;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top: 2px solid rgba(0, 0, 0, .2);
+	/* Set the fixed height of the footer here */
+	height: 5%;
 }
 
 .footer .container {
-    width: 95%;
-    height: auto;
+	width: 95%;
+	height: auto;
 }
 
 .footer a {
-    color: orange;
-    font-size: 16px;
+	color: orange;
+	font-size: 16px;
 }
 
 .footer .pull-right {
-    color: orange;
-    font-size: 16px;
-    right: 5%;
-    margin: 5px;
+	color: orange;
+	font-size: 16px;
+	right: 5%;
+	margin: 5px;
 }

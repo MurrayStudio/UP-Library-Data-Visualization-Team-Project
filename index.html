@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Team Nakatomi</title>
-    <meta name="description" content="Home Page for Library Chart">
-    <link rel="icon" href="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Team Nakatomi</title>
+		<meta name="description" content="Home Page for Library Chart">
+		<link rel="icon" href="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg">
 
-    <!-- Bootstrap and main.css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-</head>
+		<!-- Bootstrap and main.css -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
 
-<body>
+	<body>
 
-    <!-- header for website -->
-    <div class="jumbotron">
-        <h1>Nakatomi Library Data Visualization Project</h1>
-        <p>Create an interactive visualization of specific confidence levels of libraries at a variety of master level universities pulled from a Credo data set; for the use of University of Portland's library.</p>
-    </div>
+		<!-- header for website -->
+		<div class="jumbotron">
+			<h1>Nakatomi Library Data Visualization Project</h1>
+			<p>
+				Create an interactive visualization of specific confidence levels of libraries at a variety of master level universities pulled from a Credo data set; for the use of University of Portland's library.
+			</p>
+		</div>
 
-    <!-- title of chart -->
-    <div id="title_chart">
-        <h2>Average Confidence Levels Forming a Thesis by Institution</h2></div>
+		<!-- title of chart -->
+		<div id="title_chart">
+			<h2>Average Confidence Levels Forming a Thesis by Institution</h2>
+		</div>
 
-    <!-- Google Chart drawn in this div -->
-    <div id="chart_div"></div>
+		<!-- Google Chart drawn in this div -->
+		<div id="chart_div"></div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p class="pull-right">Nakatomi Co. 2015
-            </p>
-        </div>
-    </footer>
+		<!-- Dropdown to select other confidence levels -->
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Dropdown Con. Level
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li id="writeThesis">
+					<a href="#">Confidence in Writing a Thesis</a>
+				</li>
+				<li id="scholarlyInfo">
+					<a href="#">Confidence in Using Scholarly Information</a>
+				</li>
+				<li id="authoritySource">
+					<a href="#">Confidence in Evaluating the Authority of a Source</a>
+				</li>
+				<li id="ethicsInfo">
+					<a href="#">Confidence Understanding the Ethics of Using Information</a>
+				</li>
+			</ul>
+		</div>
 
+		<!-- FOOTER -->
+		<!--<footer class="footer">
+		<div class="container">
+		<p class="pull-right">
+		Nakatomi Co. 2015
+		</p>
+		</div>
+		</footer>-->
 
+		<!-- scripts -->
+		<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
 
-    <!-- scripts -->
-    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-
-</body>
+	</body>
