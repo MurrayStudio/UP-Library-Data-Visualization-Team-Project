@@ -2,7 +2,7 @@
 google.load('visualization', '1', {packages: ['corechart', 'bar']});
 
 google.setOnLoadCallback(drawChart);
-
+// data table columns: ShortName, VariableName, Color, ToolTip, Value
 function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['', 'Confidence Forming a Thesis', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
