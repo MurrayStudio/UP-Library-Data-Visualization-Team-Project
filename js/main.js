@@ -2,6 +2,54 @@
 google.load('visualization', '1', {packages: ['corechart', 'bar']});
 
 google.setOnLoadCallback(drawChart);
+
+initChart();
+
+var chart1;
+
+function initChart() {
+	// Function called on page load. Queries GoogleFusionTable, pulls data.
+	// Create a new viz object using the google API
+	// chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	
+	// Make the initial query to get the whole Fusion table (called only once for efficiency).
+	var query = "SELECT Institution, Thesis, Scholarly, Authority, Ethics FROM 1BslkTKgWIr0jwxR8odybI2fvvLSKnfSE8MylFzDi";
+	
+	var opts = {sendMethod: 'auto'};
+	var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
+	
+	
+	// Send the query and handle the response by logging the data
+	// to the console.
+	queryObj.setQuery(query);
+	queryObj.send(function(e) {
+				  
+				  data = e.getDataTable();
+				  console.log(data); // *** for testing
+				  
+//				  // First, get the textualized range of the year.
+//				  var thisYear = "" + year[0] + "-" + year[1];
+//				  
+//				  // Next, create the object and get the rows
+//				  // corresponding to "thisYear".
+//				  views[thisYear] = new google.visualization.DataView(data);
+//				  
+//				  views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 2, value: thisYear}]));
+//				  
+//				  // Get a subset of the columns.
+//				  views[thisYear].setColumns([0, 3]);
+//				  
+//				  // Draw the chart for the initial academic year.
+//				  chart.draw(views[thisYear].toDataTable(), options);
+				  
+				  });
+	
+	// SHOW THE DATA
+	// Draw the chart with the supplied options.
+	// chart.draw(data, options);
+	
+};
+
 // data table columns: ShortName, VariableName, Color, ToolTip, Value
 function drawChart() {
         var data = google.visualization.arrayToDataTable([
