@@ -16,16 +16,6 @@ librs.ui = function () {
         //vizController(yearValue);
     };
 
-    var toggle = function () {
-
-        console.log('About!');
-
-        var text = document.getElementById('about');
-
-
-
-    };
-
     var initialize = function () {
 
         console.log('Initialize!');
