@@ -11,19 +11,19 @@ librs.ui = function () {
 
     var fetch = function (confidenceName) {
 
-        if (confidenceName.localeCompare("Confidence in Writing a Thesis") {
+        if (confidenceName == "Confidence in Writing a Thesis") {
             console.log('0');
             newChart(0);
         }
-        else if (confidenceName.localeCompare("Confidence in Using Scholarly Information") {
+        if (confidenceName == "Confidence in Using Scholarly Information") {
             console.log('1');
             newChart(1);
         }
-        else if (confidenceName.localeCompare("Confidence in Evaluating the Authority of a Source") {
+        if (confidenceName == "Confidence in Evaluating the Authority of a Source") {
             console.log('2');
             newChart(2);
         }
-        else if (confidenceName.localeCompare("Confidence Understanding the Ethics of Using Information") {
+        if (confidenceName == "Confidence Understanding the Ethics of Using Information") {
             console.log('3');
             newChart(3);
         }
@@ -34,9 +34,9 @@ librs.ui = function () {
         console.log('Initialize!');
 
         $('.dropdown-menu li').on('click', function () {
-            $('#dropdown_title').html($(this).find('a').html());
-            console.log($(this).find('a').html() + " clicked");
-            fetch($(this).find('a').html()); //pass in name of confidence level clicked
+            $('#dropdown_title').html($(this).find('p').html());
+            console.log($(this).find('p').html() + " clicked");
+            fetch($(this).find('p').html()); //pass in name of confidence level clicked
         });
 
 
