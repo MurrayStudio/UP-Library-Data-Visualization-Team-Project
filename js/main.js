@@ -1,19 +1,33 @@
 //following holds code for graph
 google.load('visualization', '1', {packages: ['corechart', 'bar']});
 
-google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(initChart);
 
-initChart();
-
+// Define the variables to hold the entire fusion table,
+// and a collection of views, one for each year.
+var data;
+var views = {};
+var totals = {};
 var chart1;
+
+var options = {
+titlePosition: 'none',
+backgroundColor: '#E5E3DF',
+tooltip: {isHtml: true},
+legend: {position: 'none'},
+vAxis: {title: "Avg. Confidence Level", format: 'decimal', minValue: 0},
+hAxis: {title: "Master Level Universities"},
+height: 500
+};
+
 
 function initChart() {
 	// Function called on page load. Queries GoogleFusionTable, pulls data.
 	// Create a new viz object using the google API
-	// chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	 chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 	
 	// Make the initial query to get the whole Fusion table (called only once for efficiency).
-	var query = "SELECT Institution, Thesis, Scholarly, Authority, Ethics FROM 1BslkTKgWIr0jwxR8odybI2fvvLSKnfSE8MylFzDi";
+	var query = "SELECT Institution, ShortName, Thesis, Scholarly, Authority, Ethics FROM 1BslkTKgWIr0jwxR8odybI2fvvLSKnfSE8MylFzDi";
 	
 	var opts = {sendMethod: 'auto'};
 	var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
@@ -29,7 +43,18 @@ function initChart() {
 				  
 //				  // First, get the textualized range of the year.
 //				  var thisYear = "" + year[0] + "-" + year[1];
-//				  
+				  
+				  var currVar = "Thesis"
+				  
+				  // Now, create the object
+				  views[currVar] = new google.visualization.DataView(data);
+				  
+				  // Find which column number "Thesis" corresponds to.
+				  var rowIndex = 2
+				  
+				  // For now, just set it to the first three columns
+				  views[currVar].setColumns([0,1, rowIndex]);
+				  
 //				  // Next, create the object and get the rows
 //				  // corresponding to "thisYear".
 //				  views[thisYear] = new google.visualization.DataView(data);
@@ -40,7 +65,7 @@ function initChart() {
 //				  views[thisYear].setColumns([0, 3]);
 //				  
 //				  // Draw the chart for the initial academic year.
-//				  chart.draw(views[thisYear].toDataTable(), options);
+				  chart1.draw(views[currVar].toDataTable(), google.charts.Bar.convertOptions(options));
 				  
 				  });
 	
