@@ -1,8 +1,8 @@
- google.load('visualization', '1', {
+ /* google.load('visualization', '1', {
      packages: ['corechart', 'bar']
  });
 
- google.setOnLoadCallback(drawVisualization);
+ google.setOnLoadCallback(initChart);
 
  // Define the variables to hold the entire fusion table,
  // and a collection of views, one for each year.
@@ -58,21 +58,20 @@
          // Draw the chart for the initial academic year.
          chart.draw(data, options);
      });
- }
+ }*/
 
 
 
 
- /*//following holds code for graph
+ //following holds code for graph
  google.load('visualization', '1', {packages: ['corechart', 'bar']});
 
- google.setOnLoadCallback(initChart);
+ google.setOnLoadCallback(drawChart);
 
- // Define the variables to hold the entire fusion table,
+ /*// Define the variables to hold the entire fusion table,
  // and a collection of views, one for each year.
  var data;
  var views = {};
- var totals = {};
  var chart1;
 
  var options = {
@@ -89,7 +88,7 @@
  function initChart() {
  	// Function called on page load. Queries GoogleFusionTable, pulls data.
  	// Create a new viz object using the google API
- 	 chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
  	
  	// Make the initial query to get the whole Fusion table (called only once for efficiency).
  	var query = "SELECT Institution, ShortName, Thesis, Scholarly, Authority, Ethics FROM 1BslkTKgWIr0jwxR8odybI2fvvLSKnfSE8MylFzDi";
@@ -138,7 +137,7 @@
  	// Draw the chart with the supplied options.
  	// chart.draw(data, options);
  	
- };
+ };*/
 
  // data table columns: ShortName, VariableName, Color, ToolTip, Value
  function drawChart() {
@@ -174,4 +173,4 @@
  	return '<div style="padding:5px 5px 5px 5px; white-space: nowrap; font-size: 18px;">' +
  	'<table>' + '<tr><b>' + universityName + '</b></tr>' + '<br>'
  	+ '<tr>' + variable + '<b>' + value + '</b></tr>' + '</table></div>';
- };*/
+ };
