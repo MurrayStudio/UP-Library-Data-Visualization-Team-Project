@@ -7,9 +7,7 @@
  // Define the variables to hold the entire fusion table,
  // and a collection of views, one for each year.
  var data;
- var chart;
  var views = {};
- var totals = {};
 
  var options = {
      titlePosition: 'none',
@@ -28,11 +26,12 @@
      hAxis: {
          title: "Master Level Universities"
      },
+     colors: ['#A2C180','#3D7930','#FFC6A5','#FFFF42','#DEF3BD','#00A5C6','#DEBDDE','#000000'], //best we can do to change color
      height: 500
  };
 
  function drawVisualization() {
-     chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 
      //var query = "SELECT ShortName, Thesis, Scholarly, Authority, Ethics FROM 1BslkTKgWIr0jwxR8odybI2fvvLSKnfSE8MylFzDi";
      var query = "SELECT ShortName, Thesis FROM 1BslkTKgWIr0jwxR8odybI2fvvLSKnfSE8MylFzDi";
@@ -50,6 +49,7 @@
 
          data = e.getDataTable();
          data = new google.visualization.DataView(data);
+
 
          console.log(data);
 
