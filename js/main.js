@@ -60,13 +60,10 @@
      });
  }*/
 
-
-
-
- //following holds code for graph
+/* //following holds code for graph
  google.load('visualization', '1', {packages: ['corechart', 'bar']});
 
- google.setOnLoadCallback(drawChart);
+ google.setOnLoadCallback(drawChart);*/
 
  /*// Define the variables to hold the entire fusion table,
  // and a collection of views, one for each year.
@@ -139,12 +136,20 @@
  	
  };*/
 
+
+
+//following holds code for graph
+ google.load('visualization', '1', {packages: ['corechart', 'bar']});
+
+ google.setOnLoadCallback(drawChart);
+
+
 var thesis = google.visualization.arrayToDataTable([
 		['', 'Confidence Forming a Thesis', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
 		['UP', 	2.712, 'color: #450074', createTooltip("University of Portland\n","Confidence forming a thesis: ", 2.712)],
 		['ASU', 	2.621, 'color: #003899', createTooltip("Angelo State University\n","Confidence forming a thesis: ", 2.621)],
 		['PLU', 	2.802, 'color: #FFBD28', createTooltip("Pacific Lutheran University\n","Confidence forming a thesis: ",2.802)],
-		['SMC', 	3.381, 'color: #973141', createTooltip("Saint Mary's College of California: ",3.381)],
+		['SMC', 	3.381, 'color: #973141', createTooltip("Saint Mary's College of California\n","Confidence forming a thesis: ", 3.381)],
 									   ]);
 var scholarly = google.visualization.arrayToDataTable([
 		['', 'Confidence in Using Scholarly Information', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
@@ -171,11 +176,11 @@ var ethics = google.visualization.arrayToDataTable([
 													]);
 
 
-var allData = [thesis, scholarly, authority, ethics];
+var allData = [thesis, scholarly, authority, ethics]; //put data tables in array
 
  // data table columns: ShortName, VariableName, Color, ToolTip, Value
  function drawChart() {
-	 newChart(0);
+	 newChart(0); //initial draw, use thesis confidence level
  };
 
 // data table columns: ShortName, VariableName, Color, ToolTip, Value

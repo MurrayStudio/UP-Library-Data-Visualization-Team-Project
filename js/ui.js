@@ -9,6 +9,7 @@ var librs = librs || {};
 librs.ui = {};
 librs.ui = function () {
 
+    //calls appropriate data chart to use in main.js (newChart()) based off what was clicked
     var fetch = function (confidenceName) {
 
         if (confidenceName == "Confidence in Writing a Thesis") {
@@ -34,8 +35,11 @@ librs.ui = function () {
         console.log('Initialize!');
 
         $('.dropdown-menu li').on('click', function () {
+            
             $('#dropdown_title').html($(this).find('p').html());
+            
             console.log($(this).find('p').html() + " clicked");
+            
             fetch($(this).find('p').html()); //pass in name of confidence level clicked
         });
 
