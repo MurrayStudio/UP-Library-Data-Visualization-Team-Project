@@ -9,21 +9,34 @@ var librs = librs || {};
 librs.ui = {};
 librs.ui = function () {
 
-    var fetch = function () {
-        //var year = document.getElementById('year');
-        //var yearValue = year.value;
-        //console.log(yearValue);
-        //vizController(yearValue);
-    };
+    var fetch = function (confidenceName) {
+
+        if (confidenceName.localeCompare("Confidence in Writing a Thesis") {
+            console.log('0');
+            newChart(0);
+        }
+        else if (confidenceName.localeCompare("Confidence in Using Scholarly Information") {
+            console.log('1');
+            newChart(1);
+        }
+        else if (confidenceName.localeCompare("Confidence in Evaluating the Authority of a Source") {
+            console.log('2');
+            newChart(2);
+        }
+        else if (confidenceName.localeCompare("Confidence Understanding the Ethics of Using Information") {
+            console.log('3');
+            newChart(3);
+        }
+    }
 
     var initialize = function () {
 
         console.log('Initialize!');
-        fetch();
 
         $('.dropdown-menu li').on('click', function () {
             $('#dropdown_title').html($(this).find('a').html());
-            console.log($(this).find('a').html() + " clicked")
+            console.log($(this).find('a').html() + " clicked");
+            fetch($(this).find('a').html()); //pass in name of confidence level clicked
         });
 
 
