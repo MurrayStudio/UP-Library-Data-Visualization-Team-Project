@@ -1,0 +1,25 @@
+{
+  "name": "Team Nakatomi",
+  "version": "0.0.1",
+  "description": "Team Nakatomi UP-Library-Data-Visualization-Team-Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/shamu11/UP-Library-Data-Visualization-Team-Project"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
