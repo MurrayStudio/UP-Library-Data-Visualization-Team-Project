@@ -1,3 +1,5 @@
+var librs = librs || {};
+
 //following holds code for graph
  google.load('visualization', '1', {packages: ['corechart', 'bar']});
 
