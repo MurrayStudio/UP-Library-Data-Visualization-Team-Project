@@ -1,5 +1,3 @@
-var librs = librs || {};
-
 //following holds code for graph
  google.load('visualization', '1', {packages: ['corechart', 'bar']});
 
@@ -7,11 +5,11 @@ var librs = librs || {};
 
 
 var thesis = google.visualization.arrayToDataTable([
-		['', 'Confidence Forming a Thesis', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
-		['UP', 	2.712, 'color: #450074', createTooltip("University of Portland\n","Confidence forming a thesis: ", 2.712)],
-		['ASU', 	2.621, 'color: #003899', createTooltip("Angelo State University\n","Confidence forming a thesis: ", 2.621)],
-		['PLU', 	2.802, 'color: #FFBD28', createTooltip("Pacific Lutheran University\n","Confidence forming a thesis: ",2.802)],
-		['SMC', 	3.381, 'color: #973141', createTooltip("Saint Mary's College of California\n","Confidence forming a thesis: ", 3.381)],
+		['', 'Confidence in Writing a Thesis', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
+		['UP', 	2.712, 'color: #450074', createTooltip("University of Portland\n","Confidence in Writing a Thesis: ", 2.712)],
+		['ASU', 	2.621, 'color: #003899', createTooltip("Angelo State University\n","Confidence in Writing a Thesis: ", 2.621)],
+		['PLU', 	2.802, 'color: #FFBD28', createTooltip("Pacific Lutheran University\n","Confidence in Writing a Thesis: ",2.802)],
+		['SMC', 	3.381, 'color: #973141', createTooltip("Saint Mary's College of California\n","Confidence in Writing a Thesis: ", 3.381)],
 									   ]);
 var scholarly = google.visualization.arrayToDataTable([
 		['', 'Confidence in Using Scholarly Information', {role: 'style'}, {'type': 'string', 'role': 'tooltip', 'p': {'html': true}}],
@@ -39,17 +37,18 @@ var ethics = google.visualization.arrayToDataTable([
 
 
 var allData = [thesis, scholarly, authority, ethics]; //put data tables in array
+var currentVal = 0; //holds which data table to display
 
  // data table columns: ShortName, VariableName, Color, ToolTip, Value
  function drawChart() {
-	 newChart(0); //initial draw, use thesis confidence level
+	 newChart(currentVal); //initial draw, use thesis confidence level
  };
 
 // data table columns: ShortName, VariableName, Color, ToolTip, Value
 function newChart(val) {
 	
-	val = val % allData.length;
-	var newData = allData[val]
+	currentVal = val % allData.length;
+	var newData = allData[currentVal]
 	
 	var options = {
 	titlePosition: 'none',
@@ -58,6 +57,10 @@ function newChart(val) {
 	legend: {position: 'none'},
 	vAxis: {title: "Avg. Confidence Level", format: 'decimal', minValue: 0},
 	hAxis: {title: "Master Level Universities"},
+    animation: {
+        startup: true,
+        duration: 350,
+    },
 	height: 500
 	};
 	
@@ -72,7 +75,20 @@ function newChart(val) {
  // <bold> Univerisity Name </bold>
  // Variable name: <bold> value </bold>
  function createTooltip(universityName, variable, value) {
- 	return '<div style="padding:5px 5px 5px 5px; white-space: nowrap; font-size: 18px;">' +
+ 	return '<div style="padding:15px 15px 15px 15px; font-size: 18px; border: 3px solid rgba(0, 0, 0, .3);">' +
  	'<table>' + '<tr><b>' + universityName + '</b></tr>' + '<br>'
  	+ '<tr>' + variable + '<b>' + value + '</b></tr>' + '</table></div>';
  };
+
+//create trigger to resizeEnd event     
+$(window).resize(function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 500);
+});
+
+//redraw graph when window resize is completed  
+$(window).on('resizeEnd', function() {
+    newChart(currentVal);
+});
